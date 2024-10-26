@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Victor Cercado</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Biografía</a></li>
+                    <li><a href="mis-proyectos.html">Mis Proyectos</a></li>
+                    <li><a href="opinion-bursatil.html">Opinión Bursátil</a></li>
+                    <li><a href="contacto.html">Contáctame</a></li>
+                    <li><a href="#">Otro</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle">&#9776;</button>
+            <button class="newsletter-btn">NEWSLETTER</button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <section id="main-content">
+        <div class="card">
+            <img src="/WebSite/images/bono.jpg" alt="Automatización de valorización de bonos">
+            <div class="card-content">
+                <h3>Automatización de valorización de bonos con VBA</h3>
+                <p>Implementación de una plantilla automatizada para la valorización de bonos corporativos, basada en
+                    una fecha de valorización y un YTM proporcionado por el usuario. Esta solución fue implementada en
+                    una institución financiera, reduciendo el tiempo de procesamiento en un 70%.</p>
+                <a href="ENLACE">Ver Proyecto</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./images/cronograma.jpg" alt="Generación de cronogramas con VBA">
+            <div class="card-content">
+                <h3>Generación de cronogramas con VBA</h3>
+                <p>Desarrollo de una plantilla cuyos inputs son las características del financiamiento (monto a
+                    desembolsar, TEA, plazo, fecha de operación). El resultado es un cronograma de pagos con fechas
+                    hábiles que se exporta según las especificaciones del usuario.</p>
+                <a href="ENLACE">Ver Proyecto</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="URL_DE_LA_IMAGEN" alt="Sistema de clasificación de correos en Outlook">
+            <div class="card-content">
+                <h3>Sistema de clasificación de correos en Outlook con Python</h3>
+                <p>Desarrollo de un script que organiza correos electrónicos según palabras clave y los almacena en
+                    carpetas diarias, optimizando el flujo de trabajo del usuario.</p>
+                <a href="ENLACE">Ver Proyecto</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="URL_DE_LA_IMAGEN" alt="Análisis de estacionalidad en activos financieros">
+            <div class="card-content">
+                <h3>Análisis de estacionalidad en activos financieros</h3>
+                <p>Creación de un código en Python que calcula y grafica la estacionalidad de activos, proporcionando
+                    información clave para la toma de decisiones de inversión.</p>
+                <a href="ENLACE">Ver Proyecto</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="URL_DE_LA_IMAGEN" alt="Cuadre de abonos">
+            <div class="card-content">
+                <h3>Cuadre de abonos</h3>
+                <p>Desarrollo de un sitio web donde el usuario ingresa montos y un valor objetivo, y como resultado
+                    obtiene una combinación de montos cuya suma es igual o lo más cercana posible al valor objetivo
+                    indicado. Esta herramienta es ideal para conciliaciones de abonos bancarios.</p>
+                <a href="ENLACE">Ver Sitio Web</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Victor Cercado. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    // Cambiar el fondo del encabezado al hacer scroll
+    window.addEventListener('scroll', function () {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Funcionalidad del menú desplegable en móviles
+    const menuToggle = document.querySelector('.menu-toggle');
+    const header = document.getElementById('main-header');
+
+    menuToggle.addEventListener('click', function () {
+        header.classList.toggle('active');
+    });
+
+    // Funcionalidad del carrusel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
+
+    document.querySelector('.next-btn').addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    });
+
+    document.querySelector('.prev-btn').addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    });
+
+    function updateCarousel() {
+        const offset = -currentSlide * 100;
+        document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+    }
+</script>
